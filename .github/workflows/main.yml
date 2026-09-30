@@ -30,3 +30,7 @@ jobs:
       - name: Run Python syntax check
         run: |
           python -m compileall .
+
+      - name: Build Docker image
+        run: |
+          docker build -t flask-app .
