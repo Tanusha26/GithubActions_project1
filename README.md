@@ -1,39 +1,57 @@
-# login-and-registration-system-using-mongodb
+# 🚀 Flask + MongoDB CI/CD Pipeline
 
-## Intrduction
+A containerized Flask + MongoDB web application with a complete CI/CD pipeline using **GitHub Actions, Docker, Docker Hub, and AWS EC2**.
 
-It is a simple login and registration application. This application is developed in HTML, CSS, JS, Python Flask and MongoDB. The project aims to understand how MongoDB works in real-time applications.
+The project automates the process from code push to application deployment.
 
+---
 
-## Installation
+## 📌 Project Overview
 
-Install pre-requisites packages
+This project demonstrates how a Flask application can be:
 
-```
-pip install Flask
-pip install pymongo
-```
+- Version controlled using Git and GitHub
+- Containerized using Docker
+- Automatically validated using GitHub Actions
+- Built into a Docker image
+- Published to Docker Hub
+- Automatically deployed to an AWS EC2 instance
+- Connected to MongoDB through a Docker network
 
-## How to run it
+### 🔄 CI/CD Flow
 
-You can run the python file by giving this below command on your command prompt.
-
-```
-python app.py
-```
-
-## Output
-### Login (Signin)
-<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output1.JPG' width="50%" ></img> <br><br>
-### Validation
-<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output2.JPG' width="50%" ></img> <br><br>
-### Registration (Signup)
-<img src='https://github.com/JafirDon/login-and-registration-system-using-flask-mongodb/blob/main/static/images/output3.JPG' width="50%" ></img> <br><br>
-
-
-## License
-MIT License
-<br>
-<br>
-
-### Thank you
+```text
+Developer
+    │
+    │ git push
+    ▼
+GitHub Repository
+    │
+    ▼
+GitHub Actions
+    │
+    ├── Checkout Code
+    ├── Setup Python
+    ├── Install Dependencies
+    ├── Python Syntax Check
+    ├── Build Docker Image
+    ├── Login to Docker Hub
+    ├── Tag Docker Image
+    └── Push Docker Image
+             │
+             ▼
+        Docker Hub
+             │
+             ▼
+       SSH into AWS EC2
+             │
+             ├── Pull Latest Image
+             ├── Stop Old Container
+             ├── Remove Old Container
+             └── Start New Container
+                     │
+                     ▼
+              Flask Container
+                     │
+                     ▼
+              MongoDB Container
